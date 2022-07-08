@@ -9,12 +9,23 @@ import {
 } from "react-router-dom";
 
 const ListView = () => {
-    const {getProducts, products, increase, decrease} = ViewModel();
+    const {getProducts, products, increase, decrease, addCArt} = ViewModel();
     let navigate = useNavigate();
 
     useEffect(() => {
         getProducts();
     },[])
+
+    const buy_now = async (products) => {
+        const add_prod = await addCArt(products);
+        if (add_prod) {
+            navigate('/cart');
+        }
+    }
+
+    const add_to_cart = async (products) => {
+        await addCArt(products); 
+    }
 
     return (
         <div className="container">
@@ -47,8 +58,8 @@ const ListView = () => {
                             </div>
                             
                             <div className="col-lg-12 d-flex justify-content-start">
-                                <Button className="prodBTN me-3" variant="contained" color="secondary" onClick={() => navigate('/cart')}>Buy Now</Button>
-                                <Button className="prodBTN" variant="contained" color="primary">Add to Cart</Button>
+                                <Button className="prodBTN me-3" variant="contained" color="secondary" onClick={() => buy_now(products)}>Buy Now</Button>
+                                <Button className="prodBTN" variant="contained" color="primary" onClick={() => add_to_cart(products)}>Add to Cart</Button>
                             </div>
                         </div>
                     </div>

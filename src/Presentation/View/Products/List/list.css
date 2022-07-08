@@ -2,3 +2,10 @@
     display: flex;
     justify-content: space-around;
 }
+.product-card {
+    width: 100%;
+    max-width: 310px !important;
+}
+.product-card:hover {
+    cursor: pointer;
+}

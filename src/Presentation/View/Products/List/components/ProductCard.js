@@ -5,7 +5,7 @@ export const ProductCard = ({product, selected}) => {
     const {title, discription, image, price, id} = product;
 
     return (
-        <Card sx={{ maxWidth: 345 }} onClick={() => selected(id)}>
+        <Card className="product-card" sx={{ maxWidth: 345 }} onClick={() => selected(id)}>
             <CardMedia
                 component="img"
                 height="140"
