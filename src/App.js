@@ -4,7 +4,8 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import {List} from "./Presentation/View/Products";
+import {List, ListView} from "./Presentation/View/Products";
+import {Cart} from "./Presentation/View/User";
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<List />} />
+          <Route path="/viewProduct" element={<ListView />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </BrowserRouter>
     </div>

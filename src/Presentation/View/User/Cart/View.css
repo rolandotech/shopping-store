@@ -1,0 +1,9 @@
+.checkout{
+    width: 100%;
+}
+#qtyInput::before{
+    border: 0px;
+}
+#qtyInput::after{
+    border: 0px;
+}

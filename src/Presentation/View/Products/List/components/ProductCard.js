@@ -1,11 +1,11 @@
 import React from "react";
 import {Card, CardActions, CardContent, CardMedia, Button, Typography} from '@mui/material';
 
-export const ProductCard = ({title, discription, image}) => {
+export const ProductCard = ({product, selected}) => {
+    const {title, discription, image, price, id} = product;
 
     return (
-
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ maxWidth: 345 }} onClick={() => selected(id)}>
             <CardMedia
                 component="img"
                 height="140"
@@ -19,9 +19,12 @@ export const ProductCard = ({title, discription, image}) => {
                 <Typography variant="body2" color="text.secondary">
                     {discription}
                 </Typography>
+                <Typography variant="body2" color="text.secondary">
+                    Price {price}
+                </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small">Add To Cart</Button>
+                Price: ${price}
             </CardActions>
         </Card>
     )
